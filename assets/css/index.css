@@ -416,6 +416,9 @@ body {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.button_green:disabled, .button_green:disabled:hover {
+  background-color: var(--global-color-green);
+}
 .button_registreation {
   position: absolute;
   top: 50%;

@@ -74,6 +74,11 @@
       box-shadow: none;
    }
 
+   &_green:disabled,
+   &_green:disabled:hover {
+      background-color: var(--global-color-green);
+   }
+
    &_registreation {
       position: absolute;
       top: 50%;

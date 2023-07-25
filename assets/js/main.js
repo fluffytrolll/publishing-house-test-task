@@ -17,11 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       const formRegistration = document.querySelector("#form-registration");
+      const bioButton = document.querySelector("#finishButton");
+      let request = {};
 
       formRegistration.addEventListener("submit", (event) => {
          event.preventDefault();
+         request = {
+            email: emailInput.value,
+            nikname: nicknameInput.value,
+            password: passwordAgenInput.value,
+            checkbox: checkbox.value,
+         };
+         const jsonRequest = JSON.stringify(request);
+         console.log(jsonRequest);
          registrationModal.hide(event);
+         const registrationButton = document.querySelector("#registrationButton");
+         registrationButton.classList.add("button_green");
+         registrationButton.disabled = true;
          bioModal.show(event);
+      });
+
+      bioButton.addEventListener("click", (event) => {
+         bioModal.hide(event);
       });
 
       const emailInput = document.querySelector("#email");
