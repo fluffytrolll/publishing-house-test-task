@@ -1,0 +1,89 @@
+@mixin font-title() {
+   font-family: var(--global-fonts-family);
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   font-size: vw(14px, 320px);
+
+   @media screen and (min-width: 526px) {
+      font-size: vw(14px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      font-size: vw(14px);
+   }
+   @media screen and (min-width: 1440px) {
+      font-size: 14px;
+   }
+}
+
+@mixin font-text-regular() {
+   font-family: var(--global-fonts-family);
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   font-size: vw(14px, 320px);
+
+   @media screen and (min-width: 526px) {
+      font-size: vw(14px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      font-size: vw(14px);
+   }
+   @media screen and (min-width: 1440px) {
+      font-size: 14px;
+   }
+}
+
+@mixin font-small-text-bold() {
+   font-family: var(--global-fonts-family);
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   font-size: vw(12px, 320px);
+
+   @media screen and (min-width: 526px) {
+      font-size: vw(12px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      font-size: vw(12px);
+   }
+   @media screen and (min-width: 1440px) {
+      font-size: 12px;
+   }
+}
+
+@mixin font-small-text-regular() {
+   font-family: var(--global-fonts-family);
+   font-style: normal;
+   font-weight: 400;
+   font-size: vw(12px, 320px);
+   line-height: 100%;
+
+   @media screen and (min-width: 526px) {
+      font-size: vw(12px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      font-size: vw(12px);
+   }
+   @media screen and (min-width: 1440px) {
+      font-size: 12px;
+   }
+}
+
+@mixin font-head() {
+   font-family: var(--global-fonts-family);
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   font-size: vw(24px, 320px);
+
+   @media screen and (min-width: 526px) {
+      font-size: vw(24px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      font-size: vw(24px);
+   }
+   @media screen and (min-width: 1440px) {
+      font-size: 24px;
+   }
+}

@@ -1,0 +1,51 @@
+.form,
+.form__container,
+.form__wrapper {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.form {
+   justify-content: space-between;
+   align-items: center;
+   gap: 40px;
+
+   @media screen and (min-width: 526px) {
+      gap: vw(40px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      gap: vw(40px);
+   }
+   @media screen and (min-width: 1440px) {
+      gap: 40px;
+   }
+
+   &__container {
+      gap: vw(17px, 320px);
+
+      @media screen and (min-width: 526px) {
+         gap: vw(17px, 744px);
+      }
+      @media screen and (min-width: 921px) {
+         gap: vw(17px);
+      }
+      @media screen and (min-width: 1440px) {
+         gap: 17px;
+      }
+   }
+
+   &__wrapper {
+      gap: vw(10px, 320px);
+
+      @media screen and (min-width: 526px) {
+         gap: vw(10px, 744px);
+      }
+      @media screen and (min-width: 921px) {
+         gap: vw(10px);
+      }
+      @media screen and (min-width: 1440px) {
+         gap: 10px;
+      }
+   }
+}
