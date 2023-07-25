@@ -1,0 +1,66 @@
+.icon-button {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: none;
+   background: transparent;
+   width: vw(32px, 320px);
+   height: vw(32px, 320px);
+
+   @media screen and (min-width: 526px) {
+      width: vw(32px, 744px);
+      height: vw(32px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      width: vw(32px);
+      height: vw(32px);
+   }
+   @media screen and (min-width: 1440px) {
+      width: 32px;
+      height: 32px;
+   }
+
+   &__icon {
+      fill: var(--global-color-gray-dark);
+      transition: fill ease-in-out 0.3s;
+      min-width: vw(32px, 320px);
+      min-height: vw(32px, 320px);
+
+      @media screen and (min-width: 526px) {
+         min-width: vw(32px, 744px);
+         min-height: vw(32px, 744px);
+      }
+      @media screen and (min-width: 921px) {
+         min-width: vw(32px);
+         min-height: vw(32px);
+      }
+      @media screen and (min-width: 1440px) {
+         min-width: 32px;
+         min-height: 32px;
+      }
+   }
+
+   &:hover &__icon,
+   &:hover:focus &__icon,
+   &:hover:focus-visible &_icon {
+      fill: var(--global-color-blue);
+   }
+
+   &:hover:focus:active &__icon,
+   &:hover:focus-visible:active &__icon,
+   &:focus:active &__icon,
+   &:focus-visible:active &__icon {
+      fill: var(--global-color-blue);
+   }
+
+   &:focus &__icon,
+   &:focus-visible &__icon {
+      fill: var(--global-color-blue);
+   }
+
+   &:disabled &__icon {
+      cursor: not-allowed;
+      fill: var(--global-color-gray-light);
+   }
+}

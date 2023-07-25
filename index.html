@@ -4,207 +4,124 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Издательский дом (МК) тестовое задание от Анпилогов Артём</title>
+      <style>
+         @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+      </style>
       <link rel="stylesheet" type="text/css" href="./assets/css/index.min.css" />
    </head>
    <body class="layout">
-      <div class="modal modal__registration modal_hide">
-         <button class="icon-button" type="button" aria-label="Закрыть форму">
-            <svg
-               class="icon-button__icon"
-               xmlns="http://www.w3.org/2000/svg"
-               width="32"
-               height="32"
-               viewBox="0 0 32 32"
-               fill="none"
-               aria-hidden="true"
-            >
-               <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M24.38 22.26a1 1 0 0 1 0 1.42l-.7.7a1 1 0 0 1-1.42 0l-6.71-6.71-6.72 6.71a1 1 0 0 1-1.42 0l-.7-.7a1 1 0 0 1 0-1.42l6.71-6.71-6.71-6.72a1 1 0 0 1 0-1.42l.7-.7a1 1 0 0 1 1.42 0l6.72 6.71 6.71-6.71a1 1 0 0 1 1.42 0l.7.7a1 1 0 0 1 0 1.42l-6.71 6.72 6.71 6.71Z"
-                  fill="#C4C4C4"
-               />
-            </svg>
-         </button>
-         <h2 class="modal__title">Регистрация</h2>
-         <form
-            class="form form__registration"
-            action=""
-            method="post"
-            onsubmit="return processForm(this);"
-         >
+      <button
+         class="button text-white button_registreation"
+         id="registrationButton"
+         type="button"
+      >
+         Регистрирация
+      </button>
+      <div class="modal-content registration" style="visibility: hidden">
+         <form class="form" id="form-registration" action="" method="post">
             <div class="form__container">
                <div class="form__wrapper">
                   <label class="input">
-                     <span class="input__title">E-mail</span>
-                     <input class="input__field" type="email" name="email" id="email" />
-                     <span class="input__error input__error_hide"></span>
-                  </label>
-                  <label class="input">
-                     <span class="input__title">Никнейм</span>
-                     <input
-                        class="input__field"
-                        type="text"
-                        name="nickname"
-                        id="nickname"
-                     />
-                     <span class="input__error input__error_hide"></span>
-                  </label>
-                  <label class="input">
-                     <span class="input__title">Пароль</span>
-                     <input
-                        class="input__field"
-                        type="password"
-                        name="password"
-                        id="password"
-                     />
-                     <div class="password-checker">
-                        <span class="password-checker__title"
-                           >Пароль должен содержать:</span
-                        >
-                        <div class="password-checker__list">
-                           <label class="password-checker__item">
-                              <span class="password-checker__icon"></span>
-                              от 6 до 32 символов
-                           </label>
-                           <label class="password-checker__item">
-                              <span class="password-checker__icon"></span>
-                              цифру
-                           </label>
-                           <label class="password-checker__item">
-                              <span class="password-checker__icon"></span>
-                              заглавную и строчную букву
-                           </label>
-                        </div>
+                     <span class="input__title text-black-gray">E-mail</span>
+                     <div class="input__wrapper">
+                        <input
+                           class="input__field text-black"
+                           type="email"
+                           name="email"
+                           id="email"
+                           required
+                        />
+                        <span class="input__error text-red" aria-hidden="true"> </span>
                      </div>
-                     <span class="input__error input__error_hide"></span>
                   </label>
                   <label class="input">
-                     <span class="input__title">Пароль ещё раз</span>
-                     <input
-                        class="input__field"
-                        type="password"
-                        name="confirm_password"
-                        id="confirm_password"
-                     />
-                     <span class="input__error input__error_hide"></span>
+                     <span class="input__title text-black-gray">Никнейм</span>
+                     <div class="input__wrapper">
+                        <input
+                           class="input__field text-black"
+                           type="text"
+                           name="nickname"
+                           id="nickname"
+                           required
+                        />
+                        <span class="input__error text-red" aria-hidden="true"></span>
+                     </div>
+                  </label>
+                  <label class="input">
+                     <span class="input__title text-black-gray">Пароль</span>
+                     <div class="input__wrapper">
+                        <input
+                           class="input__field text-black"
+                           type="password"
+                           name="password"
+                           id="password"
+                           required
+                        />
+                        <div class="password-checker" id="password-checker">
+                           <span class="password-checker__title text-gray">
+                              Пароль должен содержать:
+                           </span>
+                           <div class="password-checker__list">
+                              <label class="password-checker__item digit-count text-gray">
+                                 <span class="password-checker__icon"></span>
+                                 от 6 до 32 символов
+                              </label>
+                              <label class="password-checker__item is-digit text-gray">
+                                 <span class="password-checker__icon"></span>
+                                 цифру
+                              </label>
+                              <label class="password-checker__item is-litera text-gray">
+                                 <span class="password-checker__icon"></span>
+                                 заглавную и строчную букву
+                              </label>
+                           </div>
+                        </div>
+                        <span
+                           class="input__error text-red"
+                           id="input-error-password"
+                           aria-hidden="true"
+                        ></span>
+                     </div>
+                  </label>
+                  <label class="input">
+                     <span class="input__title text-black-gray">Пароль еще раз</span>
+                     <div class="input__wrapper">
+                        <input
+                           class="input__field text-black"
+                           type="password"
+                           name="passwordAgain"
+                           id="passwordAgain"
+                           required
+                        />
+                        <span class="input__error text-red" aria-hidden="true"></span>
+                     </div>
                   </label>
                </div>
                <label class="check option">
-                  <input class="check__input" type="checkbox" />
+                  <span class="check__text">
+                     Я принимаю условия
+                     <a href="#" target="_blank" rel="noopener noreferrer">
+                        Пользовательского соглашения
+                     </a>
+                  </span>
+                  <input class="check__input" id="checkbox" type="checkbox" />
                   <span class="check__box"></span>
-                  Я принимаю условия
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                     Пользовательского соглашения
-                  </a>
                </label>
             </div>
-            <input
-               class="submit"
+            <button
+               class="button text-white submit"
                type="submit"
-               value="Зарегистрироваться"
-               aria-label="Зарегистрироваться"
-            />
-         </form>
-      </div>
-      <div class="modal modal__bio modal_hide">
-         <button class="icon-button" type="button" aria-label="Закрыть форму">
-            <svg
-               class="icon-button__icon"
-               xmlns="http://www.w3.org/2000/svg"
-               width="32"
-               height="32"
-               viewBox="0 0 32 32"
-               fill="none"
-               aria-hidden="true"
+               id="nextButton"
+               disabled=""
             >
-               <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M24.38 22.26a1 1 0 0 1 0 1.42l-.7.7a1 1 0 0 1-1.42 0l-6.71-6.71-6.72 6.71a1 1 0 0 1-1.42 0l-.7-.7a1 1 0 0 1 0-1.42l6.71-6.71-6.71-6.72a1 1 0 0 1 0-1.42l.7-.7a1 1 0 0 1 1.42 0l6.72 6.71 6.71-6.71a1 1 0 0 1 1.42 0l.7.7a1 1 0 0 1 0 1.42l-6.71 6.72 6.71 6.71Z"
-                  fill="#C4C4C4"
-               />
-            </svg>
-         </button>
-         <h2 class="modal__title">Биографические данные</h2>
-         <form class="form form__bio" action="" method="post">
-            <fieldset>
-               <legend>Ваш пол</legend>
-               <label class="radio option">
-                  <input
-                     class="radio__input"
-                     type="radio"
-                     id="man"
-                     name="genger"
-                     value="man"
-                  />
-                  <span class="radio__dot"></span>
-                  Мужской
-               </label>
-               <label class="radio option">
-                  <input
-                     class="radio__input"
-                     type="radio"
-                     id="woman"
-                     name="genger"
-                     value="woman"
-                  />
-                  <span class="radio__dot"></span>
-                  Женский
-               </label>
-            </fieldset>
-            <textarea
-               class="textarea"
-               name="textarea"
-               id="textarea"
-               cols="30"
-               rows="10"
-            ></textarea>
-            <label class="input">
-               <span class="input__title">Ваше образование</span>
-               <select class="input__field" name="education" id="education-select">
-                  <option value="">Выберите образование</option>
-                  <option value="Основное общее">Основное общее</option>
-                  <option value="Среднее общее">Среднее общее</option>
-                  <option value="Среднее профессиональное">
-                     Среднее профессиональное
-                  </option>
-                  <option value="Бакалавриат">Бакалавриат</option>
-                  <option value="Специалитет или магистратура">
-                     Специалитет или магистратура
-                  </option>
-               </select>
-            </label>
-            <fieldset>
-               <legend>Ваши любимые темы</legend>
-               <label class="check option">
-                  <input class="check__input" type="checkbox" />
-                  <span class="check__box"></span>
-                  Эксклюзив
-               </label>
-               <label class="check option">
-                  <input class="check__input" type="checkbox" />
-                  <span class="check__box"></span>
-                  Политика
-               </label>
-               <label class="check option">
-                  <input class="check__input" type="checkbox" />
-                  <span class="check__box"></span>
-                  Экономика
-               </label>
-               <label class="check option">
-                  <input class="check__input" type="checkbox" />
-                  <span class="check__box"></span>
-                  Происшествия
-               </label>
-               <label class="check option">
-                  <input class="check__input" type="checkbox" />
-                  <span class="check__box"></span>
-                  Спорт
-               </label>
-            </fieldset>
+               Зарегистрироваться
+            </button>
          </form>
       </div>
+      <div class="modal-content bio" style="visibility: hidden">
+         <button id="finishButton">Сохранить</button>
+      </div>
+      <script type="text/javascript" src="./assets/js/modal.js"></script>
       <script type="text/javascript" src="./assets/js/main.js"></script>
    </body>
 </html>

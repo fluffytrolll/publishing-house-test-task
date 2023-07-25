@@ -1,0 +1,42 @@
+:root {
+   --global-fonts-family: "Roboto", sans-serif;
+
+   --global-color-blue: #558cb7;
+   --global-color-blue-light: #82b3d9;
+   --global-color-gray: #777777;
+   --global-color-gray-light: #dddddd;
+   --global-color-gray-dark: #c4c4c4;
+   --global-color-black: #000;
+   --global-color-black-gray: #333333;
+   --global-color-green: #007b1b;
+   --global-color-red: #9f2b11;
+   --global-color-white: #fff;
+}
+
+.text-blue {
+   color: var(--global-color-blue);
+}
+
+.text-gray {
+   color: var(--global-color-gray);
+}
+
+.text-black {
+   color: var(--global-color-black);
+}
+
+.text-black-gray {
+   color: var(--global-color-black-gray);
+}
+
+.text-green {
+   color: var(--global-color-green);
+}
+
+.text-red {
+   color: var(--global-color-red);
+}
+
+.text-white {
+   color: var(--global-color-white);
+}

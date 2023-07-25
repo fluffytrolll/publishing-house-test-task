@@ -1,0 +1,128 @@
+.option {
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 0px;
+}
+
+/* Check */
+
+.check {
+   padding-left: vw(16px, 320px);
+
+   @media screen and (min-width: 526px) {
+      padding-left: vw(16px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      padding-left: vw(16px);
+   }
+   @media screen and (min-width: 1440px) {
+      padding-left: 16px;
+   }
+}
+
+.check__input {
+   position: absolute;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+.check__box {
+   position: absolute;
+   margin-top: 0px;
+   overflow: hidden;
+   background-color: white;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   box-shadow: 0 0 0 vw(1px, 320px) var(--global-color-gray-light);
+
+   margin-left: vw(-16px, 320px);
+   width: vw(12px, 320px);
+   height: vw(12px, 320px);
+   border-radius: vw(2px, 320px);
+
+   @media screen and (min-width: 526px) {
+      margin-left: vw(-16px, 744px);
+      width: vw(12px, 744px);
+      height: vw(12px, 744px);
+      border-radius: vw(2px, 744px);
+      box-shadow: 0 0 0 vw(1px, 744px) var(--global-color-gray-light);
+   }
+   @media screen and (min-width: 921px) {
+      margin-left: vw(-16px);
+      width: vw(12px);
+      height: vw(12px);
+      border-radius: vw(2px);
+      box-shadow: 0 0 0 vw(1px) var(--global-color-gray-light);
+   }
+   @media screen and (min-width: 1440px) {
+      margin-left: -16px;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px var(--global-color-gray-light);
+   }
+}
+
+.check__text {
+   @include font-small-text-regular();
+   color: var(--global-color-black);
+
+   a {
+      color: var(--global-color-blue);
+
+      &:hover,
+      &:focus,
+      &:focus-visible {
+         text-decoration: underline;
+      }
+   }
+}
+
+/* Checked */
+
+.check__input:checked + .check__box {
+   background-color: var(--global-color-blue);
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='9' viewBox='0 0 10 9' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m9.53 1.14-4.5 6.5a1 1 0 0 1-1.53.14L0 4.28l1.41-1.42 2.66 2.65L7.88 0l1.65 1.14Z' fill='%23fff'/%3E%3C/svg%3E");
+   background-size: contain;
+   background-position: 50% 50%;
+   background-size: 9px 9px;
+   box-shadow: none;
+}
+
+/* Focused */
+
+.check__input:focus + .check__box {
+   box-shadow: 0 0 0 vw(1px, 320px) var(--global-color-blue-light);
+
+   @media screen and (min-width: 526px) {
+      box-shadow: 0 0 0 vw(1px, 744px) var(--global-color-blue-light);
+   }
+   @media screen and (min-width: 921px) {
+      box-shadow: 0 0 0 vw(1px) var(--global-color-blue-light);
+   }
+   @media screen and (min-width: 1440px) {
+      box-shadow: 0 0 0 1px var(--global-color-blue-light);
+   }
+}
+
+/* Disabled */
+
+.check__input:disabled + .check__box {
+   box-shadow: 0 0 0 vw(1px, 320px) var(--global-color-gray-light);
+
+   @media screen and (min-width: 526px) {
+      box-shadow: 0 0 0 vw(1px, 744px) var(--global-color-gray-light);
+   }
+   @media screen and (min-width: 921px) {
+      box-shadow: 0 0 0 vw(1px) var(--global-color-gray-light);
+   }
+   @media screen and (min-width: 1440px) {
+      box-shadow: 0 0 0 1px var(--global-color-gray-light);
+   }
+}
+
+.check__input:checked:disabled + .check__box {
+   background-color: var(--global-color-gray-light);
+}
