@@ -1,0 +1,103 @@
+.input {
+   display: flex;
+   flex-direction: column;
+   gap: vw(10px, 320px);
+   width: 100%;
+   min-height: vw(95px, 320px);
+
+   @media screen and (min-width: 526px) {
+      gap: vw(10px, 744px);
+      min-height: vw(85px, 744px);
+   }
+   @media screen and (min-width: 921px) {
+      gap: vw(10px);
+      min-height: vw(85px);
+   }
+   @media screen and (min-width: 1440px) {
+      gap: 10px;
+      min-height: 85px;
+   }
+
+   &__wrapper {
+      position: relative;
+      display: inherit;
+      flex-direction: inherit;
+      gap: vw(5px, 320px);
+      width: inherit;
+
+      @media screen and (min-width: 526px) {
+         gap: vw(5px, 744px);
+      }
+      @media screen and (min-width: 921px) {
+         gap: vw(5px);
+      }
+      @media screen and (min-width: 1440px) {
+         gap: 5px;
+      }
+   }
+
+   &__title {
+      @include font-title();
+   }
+
+   &__field {
+      display: inline-block;
+      padding: vw(12px, 320px) vw(20px, 320px);
+      width: 100%;
+      height: vw(40px, 320px);
+      border-width: vw(1px, 320px);
+      border-style: solid;
+      border-color: var(--global-color-gray-light);
+      transition: border-color ease-in-out 0.3s;
+      @include font-text-regular();
+
+      &:focus:active,
+      &:focus-visible:active,
+      &:focus,
+      &:focus-visible {
+         border-color: var(--global-color-blue-light);
+      }
+
+      &:disabled {
+         background-color: var(--global-color-gray-light);
+      }
+
+      @media screen and (min-width: 526px) {
+         padding: vw(12px, 744px) vw(20px, 744px);
+         height: vw(40px, 744px);
+         border-width: vw(1px, 744px);
+      }
+      @media screen and (min-width: 921px) {
+         padding: vw(12px) vw(20px);
+         height: vw(40px);
+         border-width: vw(1px);
+      }
+      @media screen and (min-width: 1440px) {
+         padding: 12px 20px;
+         height: 40px;
+         border-width: 1px;
+      }
+
+      &_error,
+      &_error:focus,
+      &_error:focus-visible,
+      &_error:focus:active,
+      &_error:focus-visible:active {
+         border-color: var(--global-color-red);
+      }
+   }
+
+   &__error {
+      opacity: 0;
+      transform: translateY(-100%);
+      visibility: hidden;
+      transition: opacity ease-in-out 0.3s, transform ease-in-out 0.3s;
+      @include font-small-text-regular();
+
+      &_show {
+         opacity: 1;
+         transform: translateY(0%);
+         visibility: visible;
+      }
+   }
+}
