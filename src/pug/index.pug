@@ -1,0 +1,55 @@
+extends ./root/layout.pug
+
+block content
+  body.layout 
+    button.button.text-white.button_registreation#registrationButton(type="button")
+      | Регистрирация
+    .modal-content.registration(style="visibility: hidden")
+      form.form#form-registration(action="" method="post")
+        .form__container
+          .form__wrapper
+            label.input
+              span.input__title.text-black-gray E-mail
+              div.input__wrapper
+                input.input__field.text-black(type="email", name="email", id="email", required)
+                span.input__error.text-red(aria-hidden="true")
+            label.input
+              span.input__title.text-black-gray Никнейм
+              div.input__wrapper
+                input.input__field.text-black(type="text", name="nickname", id="nickname", required)
+                span.input__error.text-red(aria-hidden="true")
+            label.input
+              span.input__title.text-black-gray Пароль
+              div.input__wrapper
+                input.input__field.text-black(type="password", name="password", id="password", required)
+                .password-checker#password-checker
+                  span.password-checker__title.text-gray Пароль должен содержать:
+                  .password-checker__list
+                    label.password-checker__item.digit-count.text-gray
+                      span.password-checker__icon
+                      | от 6 до 32 символов
+                    label.password-checker__item.is-digit.text-gray
+                      span.password-checker__icon
+                      | цифру
+                    label.password-checker__item.is-litera.text-gray
+                      span.password-checker__icon
+                      | заглавную и строчную букву
+                span.input__error.text-red#input-error-password(aria-hidden="true")
+            label.input
+              span.input__title.text-black-gray Пароль еще раз
+              div.input__wrapper
+                input.input__field.text-black(type="password", name="passwordAgain", id="passwordAgain", required)
+                span.input__error.text-red(aria-hidden="true")
+          label.check.option
+            span.check__text
+              span 
+              | Я принимаю условия 
+              a(href="#" target="_blank" rel="noopener noreferrer")
+                | Пользовательского соглашения
+            input.check__input#checkbox(type="checkbox")
+            span.check__box
+        button.button.text-white.submit(type="submit", id="nextButton", disabled)
+          | Зарегистрироваться
+
+    .modal-content.bio(style="visibility: hidden")
+      button#finishButton Далее

@@ -1,17 +1,19 @@
 /* eslint-disable linebreak-style */
 const srcPuth = 'src';
-const buildPath = 'build';
+const destPath = 'build';
 
 const config = {
   src: {
     root: srcPuth,
-    scss: `${srcPuth}/assets/scss`,
-    javascript: `${srcPuth}/assets/js`,
+    sass: `${srcPuth}/assets/scss`,
+    js: `${srcPuth}/assets/js`,
+    pug: `${srcPuth}/pug`,
   },
   dest: {
-    root: buildPath,
-    scss: `${buildPath}/assets/css`,
-    javascript: `${buildPath}/assets/js`,
+    root: destPath,
+    html: destPath,
+    css: `${destPath}/assets/css`,
+    js: `${destPath}/assets/js`,
   },
   setEnv() {
     this.isProd = process.argv.includes('--prod');
